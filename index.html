@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>practice demo</title>
+    <link rel="stylesheet" href="src/css/main.css"/>
+    <link rel="stylesheet" href="src/css/practice.css"/>
+</head>
+<body>
+    <div class="header">
+        <h1 class="title">ESUI-DEMO</h1>
+    </div>
+    <div class="container">
+        <div class="panel">
+            <div class="item-title">按钮</div>
+            <button data-ui="type:Button;id:normalBtn;">普通按钮</button>
+            <button data-ui="type:Button;id:norbigBtn;width:200;height:50">普通大按钮</button>
+            <button data-ui="type:Button;id:defaultBtn;">点我</button>
+            <button data-ui="type:Button;id:disabledBtn;width:200;height:50">点我禁用</button>
+            <button data-ui="type:Button;id:hideBtn;">点我隐藏</button>
+        </div>
+        <div class="panel">
+            <div class="item-title"></div>
+            <div data-ui="type:BoxGroup;boxType:radio;id:checkBox;orientation:vertical"></div>
+        </div>
+    </div>
+
+</body>
+<script src="dep/esl/1.2.0/src/esl.js"></script>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script>
+    require.config({
+        'baseUrl': '',
+        'paths': {},
+        'packages': [
+            {
+                'name': 'mini-event',
+                'location': 'dep/mini-event/1.0.2/src'
+            },
+            {
+                'name': 'moment',
+                'location': 'dep/moment/2.7.0/src',
+                'main': 'moment'
+            },
+            {
+                'name': 'underscore',
+                'location': 'dep/underscore/1.5.2/src',
+                'main': 'underscore'
+            },
+            {
+                'name': 'esui',
+                'location':'dep/esui/3.1.0-beta.6/src',
+                'main': 'main'
+            }
+        ]
+    });
+    require([
+            'esui',
+            'esui/Button',
+            'esui/BoxGroup'
+             ],
+            function (ui) {
+                var controls = ui.init();
+                var defaultBtn = controls[0];
+                var disabledBtn = controls[1];
+                var hideBtn = controls[2];
+                defaultBtn.onclick = function () {
+                    defaultBtn.setContent('haha');
+                };
+                disabledBtn.onclick=function(){
+                    disabledBtn.disable();
+                };
+                hideBtn.onclick=function(){
+                    hideBtn.hide();
+                };
+            }
+            )
+</script>
+</html>
