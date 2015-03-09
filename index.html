@@ -72,6 +72,25 @@
                 <div class="subbtn" data-ui-type="Button" data-ui-id="sub-btn">提交</div>
             </form>
         </div>
+        <div class="panel">
+            <div class="item-title">SearchBox</div>
+            <div data-ui-type="SearchBox" data-ui-placeholder="搜索"></div>
+        </div>
+        <div class="panel">
+            <div class="item-title">SearchBox</div>
+            <div data-ui-type="Panel" style="height: 300px;border:1px solid #eee;">
+                panel content
+                <a href="">Think First</a>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="item-title">Link</div>
+            <a href="https://www.baidu.com" data-ui-type="Link" data-ui-id="linkforbaidu" data-ui-target="_blank">Baidu</a>
+        </div>
+        <div class="panel">
+            <div class="item-title">Pager</div>
+            <div data-ui-type="Pager" data-ui="layout:alignLeft;id:pager;" data-ui-page="5" data-ui-count="100"></div>
+        </div>
     </div>
 
 </body>
@@ -114,6 +133,8 @@
                 'esui/Crumb',
                 'esui/Form',
                 'esui/Label',
+                'esui/Panel',
+                'esui/Link',
                 'esui/TextLine',
                 'esui/TextBox',
                 'esui/InputControl',
@@ -125,7 +146,9 @@
                 'esui/validator/MaxLengthRule',
                 'esui/validator/PatternRule',
                 'esui/validator/RequiredRule',
-                'esui/validator/MaxRule'
+                'esui/validator/MaxRule',
+                'esui/SearchBox',
+                'esui/Pager'
              ],
             function (ui,lib,Validity) {
                 var controls = ui.init();
@@ -172,6 +195,9 @@
                     }
                     this.showValidity(validity);
                 });
+                var pager = ui.get('pager');
+                pager.set('backText','←Pre');
+                pager.set('forwardText','Next→');
             }
             )
 </script>
