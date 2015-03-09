@@ -21,7 +21,39 @@
         </div>
         <div class="panel">
             <div class="item-title"></div>
-            <div data-ui="type:BoxGroup;boxType:radio;id:checkBox;orientation:vertical"></div>
+            <div data-ui="type:BoxGroup;boxType:radio;id:Radio;orientation:horizontal;">
+                <ul>
+                    <li>
+                        <input type="radio" id="radio1" title="1" value="1">
+                    </li>
+                    <li>
+                        <input id="radio2" type="radio" title="2" value="2">
+                    </li>
+                </ul>
+            </div>
+            <div data-ui="type:BoxGroup;boxType:checkbox;id:CheckBox;orientation:horizontal;">
+                <ul>
+                    <li>
+                        <input type="checkbox" title="top"/>
+                    </li>
+                    <li>
+                        <input type="checkbox" title="grd"/>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="item-title">Calendar</div>
+            <div data-ui="type:Calendar;dateFormat:YYYY-MM-DD"></div>
+
+        </div>
+        <div class="panel">
+            <div class="item-title">CommandMenu</div>
+            <div data-ui="type:CommandMenu;displayText:命令选择;"></div>
+        </div>
+        <div class="panel">
+            <div class="item-title">Crumb</div>
+            <div data-ui="type:Crumb"></div>
         </div>
     </div>
 
@@ -57,13 +89,20 @@
     require([
             'esui',
             'esui/Button',
-            'esui/BoxGroup'
+            'esui/BoxGroup',
+            'esui/CheckBox',
+            'esui/Calendar',
+            'esui/CommandMenu',
+            'esui/Crumb'
              ],
             function (ui) {
                 var controls = ui.init();
-                var defaultBtn = controls[0];
-                var disabledBtn = controls[1];
-                var hideBtn = controls[2];
+                var defaultBtn = controls[2];
+                var disabledBtn = controls[3];
+                var hideBtn = controls[4];
+                var radio1 = controls[6];
+                var radio2 = controls[5];
+                var cmdMenu = controls[8];
                 defaultBtn.onclick = function () {
                     defaultBtn.setContent('haha');
                 };
@@ -73,6 +112,14 @@
                 hideBtn.onclick=function(){
                     hideBtn.hide();
                 };
+                cmdMenu.set('datasource',[
+                    {text:'haha',handler:function(){alert('haha')}},
+                    {text:'xixi',handler:function(){alert('xixi')}},
+                    {text:'`(*∩_∩*)',handler:function(){alert('(☆_☆)/~~')}}
+                ]);
+                cmdMenu.on('select', function (e) {
+                    alert('我是第'+(e.index+1)+'个选项');
+                })
             }
             )
 </script>
