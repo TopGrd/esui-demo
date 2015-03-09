@@ -14,7 +14,7 @@
         <div class="panel">
             <div class="item-title">按钮</div>
             <button data-ui="type:Button;id:normalBtn;">普通按钮</button>
-            <button data-ui="type:Button;id:norbigBtn;width:200;height:50">普通大按钮</button>
+            <button data-ui="type:Button;id:norbigBtn;width:200;height:50">大按钮</button>
             <button data-ui="type:Button;id:defaultBtn;">点我</button>
             <button data-ui="type:Button;id:disabledBtn;width:200;height:50">点我禁用</button>
             <button data-ui="type:Button;id:hideBtn;">点我隐藏</button>
@@ -51,9 +51,26 @@
             <div class="item-title">CommandMenu</div>
             <div data-ui="type:CommandMenu;displayText:命令选择;"></div>
         </div>
-        <div class="panel">
+        <div class="panel" id="myC">
             <div class="item-title">Crumb</div>
-            <div data-ui="type:Crumb"></div>
+            <div data-ui="id:myCrumb;type:Crumb">
+                <a href="http://www.baidu.com">alink</a>
+                <a href="http://www.qq.com">blink</a>
+                <a href="http://www.alibaba.com">clink</a>
+            </div>
+            <div data-ui="id:myCrumb;type:Crumb;separator:/">
+                <a href="http://www.baidu.com">alink</a>
+                <a href="http://www.qq.com">blink</a>
+                <a href="">clink</a>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="item-title">Form</div>
+            <form data-ui-type="Form" data-ui-id="form" data-ui-auto-validate="true" data-ui-submit-button="sub-btn">
+                <label data-ui="type:Label;text:输入数字:;title:数字"></label>
+                <input data-ui-type="TextBox" data-ui-id="name" data-ui-child-name="name" data-ui-name="name" data-ui-mode="text"/>
+                <div class="subbtn" data-ui-type="Button" data-ui-id="sub-btn">提交</div>
+            </form>
         </div>
     </div>
 
@@ -87,15 +104,30 @@
         ]
     });
     require([
-            'esui',
-            'esui/Button',
-            'esui/BoxGroup',
-            'esui/CheckBox',
-            'esui/Calendar',
-            'esui/CommandMenu',
-            'esui/Crumb'
+                'esui',
+                'esui/lib',
+                'esui/Button',
+                'esui/BoxGroup',
+                'esui/CheckBox',
+                'esui/Calendar',
+                'esui/CommandMenu',
+                'esui/Crumb',
+                'esui/Form',
+                'esui/Label',
+                'esui/TextLine',
+                'esui/TextBox',
+                'esui/InputControl',
+                'esui/Validity',
+                'esui/validator/Validity',
+                'esui/validator/ValidityState',
+                'esui/validator/MaxRule',
+                'esui/validator/MinRule',
+                'esui/validator/MaxLengthRule',
+                'esui/validator/PatternRule',
+                'esui/validator/RequiredRule',
+                'esui/validator/MaxRule'
              ],
-            function (ui) {
+            function (ui,lib,Validity) {
                 var controls = ui.init();
                 var defaultBtn = controls[2];
                 var disabledBtn = controls[3];
@@ -119,7 +151,27 @@
                 ]);
                 cmdMenu.on('select', function (e) {
                     alert('我是第'+(e.index+1)+'个选项');
-                })
+                });
+                var form = ui.get('form');
+                console.log(form);
+
+                function submit(e) {
+                    var data = form.getData();
+                }
+                form.on('submit',submit);
+                var name = form.getChild('name');
+                console.log(name);
+                var maxLength = 30;
+                name.on('input', function () {
+                    var value = this.getValue();
+                    var leftLength = maxLength-value.length;
+                    var validity = new Validity();
+                    if(leftLength>0){
+                        validity.setCustomValidState('notice');
+                        validity.setCustomMessage('you can input '+leftLength+'word');
+                    }
+                    this.showValidity(validity);
+                });
             }
             )
 </script>
