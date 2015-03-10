@@ -13,83 +13,176 @@
     <div class="container">
         <div class="panel">
             <div class="item-title">按钮</div>
-            <button data-ui="type:Button;id:normalBtn;">普通按钮</button>
-            <button data-ui="type:Button;id:norbigBtn;width:200;height:50">大按钮</button>
-            <button data-ui="type:Button;id:defaultBtn;">点我</button>
-            <button data-ui="type:Button;id:disabledBtn;width:200;height:50">点我禁用</button>
-            <button data-ui="type:Button;id:hideBtn;">点我隐藏</button>
+            <div class="content">
+                <button data-ui="type:Button;id:normalBtn;">普通按钮</button>
+                <button data-ui="type:Button;id:norbigBtn;width:200;height:50">大按钮</button>
+                <button data-ui="type:Button;id:defaultBtn;">点我</button>
+                <button data-ui="type:Button;id:disabledBtn;width:200;height:50">点我禁用</button>
+                <button data-ui="type:Button;id:hideBtn;">点我隐藏</button>
+            </div>
         </div>
         <div class="panel">
-            <div class="item-title"></div>
-            <div data-ui="type:BoxGroup;boxType:radio;id:Radio;orientation:horizontal;">
-                <ul>
-                    <li>
-                        <input type="radio" id="radio1" title="1" value="1">
-                    </li>
-                    <li>
-                        <input id="radio2" type="radio" title="2" value="2">
-                    </li>
-                </ul>
-            </div>
-            <div data-ui="type:BoxGroup;boxType:checkbox;id:CheckBox;orientation:horizontal;">
-                <ul>
-                    <li>
-                        <input type="checkbox" title="top"/>
-                    </li>
-                    <li>
-                        <input type="checkbox" title="grd"/>
-                    </li>
-                </ul>
+            <div class="item-title">BoxGroup</div>
+            <div class="content">
+                <div data-ui="type:BoxGroup;boxType:radio;id:Radio;orientation:horizontal;">
+                    <ul>
+                        <li>
+                            <input type="radio" data-ui-type="Radio" data-ui-id="radio1" title="1" value="1">
+                        </li>
+                        <li>
+                            <input id="radio2" type="radio" title="2" value="2">
+                        </li>
+                    </ul>
+                </div>
+
+                <div data-ui="type:BoxGroup;boxType:checkbox;id:CheckBox;orientation:horizontal;">
+                    <ul>
+                        <li>
+                            <input type="checkbox" title="top" value="top"/>
+                        </li>
+                        <li>
+                            <input type="checkbox" title="grd" value="grd"/>
+                        </li>
+                        <li>
+                            <input type="checkbox" title="good" value="good"/>
+                        </li>
+                    </ul>
+                </div>
+                <p id="selectValue">已选值：</p>
             </div>
         </div>
         <div class="panel">
             <div class="item-title">Calendar</div>
-            <div data-ui="type:Calendar;dateFormat:YYYY-MM-DD"></div>
-
+            <div class="content">
+                <div data-ui="type:Calendar;dateFormat:YYYY-MM-DD"></div>
+            </div>
         </div>
         <div class="panel">
             <div class="item-title">CommandMenu</div>
-            <div data-ui="type:CommandMenu;displayText:命令选择;"></div>
+            <div class="content">
+                <div data-ui="type:CommandMenu;displayText:命令选择;"></div>
+            </div>
         </div>
         <div class="panel" id="myC">
             <div class="item-title">Crumb</div>
-            <div data-ui="id:myCrumb;type:Crumb">
-                <a href="http://www.baidu.com">alink</a>
-                <a href="http://www.qq.com">blink</a>
-                <a href="http://www.alibaba.com">clink</a>
-            </div>
-            <div data-ui="id:myCrumb;type:Crumb;separator:/">
-                <a href="http://www.baidu.com">alink</a>
-                <a href="http://www.qq.com">blink</a>
-                <a href="">clink</a>
+                <div class="content">
+                <div data-ui="id:myCrumb;type:Crumb">
+                    <a href="http://www.baidu.com">alink</a>
+                    <a href="http://www.qq.com">blink</a>
+                    <a href="http://www.alibaba.com">clink</a>
+                </div>
+                <div data-ui="id:myCrumb;type:Crumb;separator:/">
+                    <a href="http://www.baidu.com">alink</a>
+                    <a href="http://www.qq.com">blink</a>
+                    <a href="">clink</a>
+                </div>
             </div>
         </div>
         <div class="panel">
             <div class="item-title">Form</div>
-            <form data-ui-type="Form" data-ui-id="form" data-ui-auto-validate="true" data-ui-submit-button="sub-btn">
-                <label data-ui="type:Label;text:输入数字:;title:数字"></label>
-                <input data-ui-type="TextBox" data-ui-id="name" data-ui-child-name="name" data-ui-name="name" data-ui-mode="text"/>
-                <div class="subbtn" data-ui-type="Button" data-ui-id="sub-btn">提交</div>
-            </form>
+            <div class="content">
+                <form data-ui-type="Form" data-ui-id="form" data-ui-auto-validate="true" data-ui-submit-button="sub-btn">
+                    <label data-ui="type:Label;text:输入数字:;title:数字"></label>
+                    <input data-ui-type="TextBox" data-ui-id="name" data-ui-child-name="name" data-ui-name="name" data-ui-mode="text"/>
+                    <div class="subbtn" data-ui-type="Button" data-ui-id="sub-btn">提交</div>
+                </form>
+            </div>
         </div>
         <div class="panel">
             <div class="item-title">SearchBox</div>
-            <div data-ui-type="SearchBox" data-ui-placeholder="搜索"></div>
+            <div class="content">
+                <div data-ui-type="SearchBox" data-ui-placeholder="搜索"></div>
+            </div>
         </div>
         <div class="panel">
-            <div class="item-title">SearchBox</div>
-            <div data-ui-type="Panel" style="height: 300px;border:1px solid #eee;">
-                panel content
-                <a href="">Think First</a>
+            <div class="item-title">Panel</div>
+            <div class="content">
+                <div data-ui-type="Panel" data-ui-id="panel" class="exp-panel">
+                    panel content
+                    <a href="">Think First</a>
+                </div>
+                <button data-ui-id="setContent" data-ui-type="Button">设置内容</button>
             </div>
         </div>
         <div class="panel">
             <div class="item-title">Link</div>
-            <a href="https://www.baidu.com" data-ui-type="Link" data-ui-id="linkforbaidu" data-ui-target="_blank">Baidu</a>
+            <div class="content">
+                <a href="https://www.baidu.com" data-ui-type="Link" data-ui-id="linkforbaidu" data-ui-target="_blank">Baidu</a>
+            </div>
         </div>
         <div class="panel">
             <div class="item-title">Pager</div>
-            <div data-ui-type="Pager" data-ui="layout:alignLeft;id:pager;" data-ui-page="5" data-ui-count="100"></div>
+            <div class="content">
+                <div data-ui-type="Pager" data-ui="layout:alignLeft;id:pager;" data-ui-page="5" data-ui-count="200"></div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="item-title">Select</div>
+            <div class="content">
+                <div data-ui-id="select" data-ui-type="Select" data-ui-width="200"></div>
+            </div>
+         </div>
+        <div class="panel">
+            <div class="item-title">Tab</div>
+            <div class="content">
+                <div data-ui-id="tab" data-ui-type="Tab" data-ui-orientation="horizontal">
+                    <!--<ul data-role="navigator">
+                        <li data-for="a">Tab1</li>
+                        <li data-for="b">Tab2</li>
+                        <li data-for="c">Tab3</li>
+                    </ul>-->
+                    <div id="tabPanel1" data-ui-type="Panel" class="exp-panel">content for Tab1</div>
+                    <div id="tabPanel2" data-ui-type="Panel" class="exp-panel">content for Tab2</div>
+                    <div id="tabPanel3" data-ui-type="Panel" class="exp-panel">content for Tab3</div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="item-title">TextLine</div>
+            <div class="content">
+                <div data-ui-id="textLine" data-ui-type="TextLine"></div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="item-title">Tip</div>
+            <div class="content">
+                <span>提示:</span>
+                <div data-ui-id="tip" data-ui-type="Tip" title="小提示">haha</div>
+                <span>点击:</span>
+                <div data-ui-type="Tip" data-ui-id="tipBtn" id="tipLabel" title="FUck" data-ui="showMode:click">小提示</div>
+                <br>
+                <br>
+                <label id="labelTip" data-ui-id="labelTip" data-ui-type="Label">我是提示</label>
+
+            </div>
+        </div>
+        <div class="panel">
+            <div class="item-title">Toast</div>
+            <div class="content">
+                <button id="normal">normal</button>
+                <button id="info">info</button>
+                <button id="alert">alert</button>
+                <button id="error">error</button>
+                <button id="success">success</button>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="item-title">Tree</div>
+            <div class="content" id="tree3">
+                <div data-ui-type="Tree" data-ui-id="tree"></div>
+                <div data-ui-type="Tree" data-ui-id="tree2" data-ui="skin:folder"></div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="item-title">Wizard</div>
+            <div class="content" id="wiz">
+                <button data-ui-id="prev" data-ui-type="Button">上一步</button>
+                <button data-ui-id="next" data-ui-type="Button">下一步</button>
+                <div id="a">左转</div>
+                <div id="b">直走</div>
+                <div id="c">右转</div>
+
+            </div>
         </div>
     </div>
 
@@ -137,6 +230,12 @@
                 'esui/Link',
                 'esui/TextLine',
                 'esui/TextBox',
+                'esui/Tab',
+                'esui/Tip',
+                'esui/TipLayer',
+                'esui/Tree',
+                'esui/TreeStrategy',
+                'esui/Select',
                 'esui/InputControl',
                 'esui/Validity',
                 'esui/validator/Validity',
@@ -148,16 +247,18 @@
                 'esui/validator/RequiredRule',
                 'esui/validator/MaxRule',
                 'esui/SearchBox',
-                'esui/Pager'
+                'esui/Pager',
+                'esui/Wizard',
+                'esui/Frame'
              ],
-            function (ui,lib,Validity) {
+            function (ui,lib) {
                 var controls = ui.init();
                 var defaultBtn = controls[2];
                 var disabledBtn = controls[3];
                 var hideBtn = controls[4];
-                var radio1 = controls[6];
-                var radio2 = controls[5];
                 var cmdMenu = controls[8];
+
+                /*Button Start*/
                 defaultBtn.onclick = function () {
                     defaultBtn.setContent('haha');
                 };
@@ -167,6 +268,17 @@
                 hideBtn.onclick=function(){
                     hideBtn.hide();
                 };
+                /*Button End*/
+
+                /*CheckBox Start*/
+                var allCheck = ui.get('CheckBox');
+                allCheck.on('change', function () {
+                            $('#selectValue').text('已选值：' + this.getValue());
+                        }
+                );
+                /*CheckBox End*/
+
+                /*CommandMenu Start*/
                 cmdMenu.set('datasource',[
                     {text:'haha',handler:function(){alert('haha')}},
                     {text:'xixi',handler:function(){alert('xixi')}},
@@ -175,6 +287,10 @@
                 cmdMenu.on('select', function (e) {
                     alert('我是第'+(e.index+1)+'个选项');
                 });
+                /*CommandMenu End*/
+
+
+                /*Form Start*/
                 var form = ui.get('form');
                 console.log(form);
 
@@ -185,20 +301,190 @@
                 var name = form.getChild('name');
                 console.log(name);
                 var maxLength = 30;
+                var Validity = require('esui/Validity');
+                var validity = new Validity();
+                console.log(validity);
                 name.on('input', function () {
                     var value = this.getValue();
                     var leftLength = maxLength-value.length;
-                    var validity = new Validity();
                     if(leftLength>0){
                         validity.setCustomValidState('notice');
                         validity.setCustomMessage('you can input '+leftLength+'word');
                     }
                     this.showValidity(validity);
                 });
+                /*Form End*/
+
+                /*Pager Start*/
                 var pager = ui.get('pager');
                 pager.set('backText','←Pre');
                 pager.set('forwardText','Next→');
-            }
-            )
+                /*Pager End*/
+
+                /*Panel Start*/
+                var panel = ui.get('panel'), setContent = ui.get('setContent');
+                setContent.onclick = function(){
+                    panel.setContent('内容已经被更改！');
+                };
+                /*Panel End*/
+
+                /*Select Start*/
+                var select = ui.get('select');
+                select.set('emptyText','--请选择星球--');
+                var select_data=[
+                    {name:'star1',value:'Mars'},
+                    {name:'star2',value:'Moon'},
+                    {name:'star3',value:'earth'}
+                ];
+                select.set('datasource',select_data);
+                select.set('itemTemplate','<span>&nbsp;&nbsp;&nbsp;&nbsp;${text}</span>');
+                select.on('change',function(e){
+                    alert(this.getValue());
+                });
+                /*Select End*/
+
+                /*Tab Start*/
+                var tab = ui.get("tab");
+                var data_tab =[
+                    {panel:'tabPanel1',title:'Tab1'},
+                    {panel:'tabPanel2',title:'Tab2'},
+                    {panel:'tabPanel3',title:'Tab3'}
+                ];
+                tab.set('tabs',data_tab);
+                /*Tab End*/
+
+                /*Tip Start*/
+                var tip = ui.get('tip');
+                var tipLayer = ui.create('TipLayer', {
+                    title: '最普通的提示',
+                    content: '随便提示一下随便提示一下随便提示一下'
+                });
+                var TipLayer =  require('esui/TipLayer');
+                var tipL = ui.create('TipLayer',{
+                    content:'XiaoT',
+                    title:'jack'
+                });
+                var onceNotice = TipLayer.onceNotice({
+                    content: '啥东西',
+                    targetDOM: 'labelTip'
+                });
+
+                /*Tip End*/
+
+                /*Tree Start*/
+                var data_tree= {
+                    id: '1',
+                    text: '根节点',
+                    children: [{
+                        id:'2',
+                        text:'上',
+                        children:[
+                            {id:'21',text:'上1'},
+                            {id:'22',text:'中2'},
+                            {id:'23',text:'下3'}
+                        ]
+                        },
+                        {
+                            id:'3',
+                            text:'中',
+                            children:[
+                                {id:'31',text:'中1'},
+                                {id:'32',text:'中2'},
+                                {id:'33',text:'中3'}
+                            ]
+                        },{
+                            id:'4',
+                            text:'下'
+                        }
+                    ]
+                };
+                var data_tree2= {
+                    id: '1',
+                    text: 'root',
+                    children: [{
+                        id:'2',
+                        text:'文件夹1',
+                        children:[
+                            {id:'21',text:'文档'},
+                            {id:'22',text:'电影'},
+                            {id:'23',text:'歌曲'}
+                        ]
+                    },
+                        {
+                            id:'3',
+                            text:'文件夹2',
+                            children:[
+                                {id:'31',text:'OFFCIE'},
+                                {id:'32',text:'TEST'},
+                                {id:'33',text:'WORK'}
+                            ]
+                        },{
+                            id:'4',
+                            text:'文件夹2'
+                        }
+                    ]
+                };
+                var tree = ui.get('tree');
+                var tree2 = ui.get('tree2');
+                tree2.set('datasource',data_tree2);
+                tree.set('datasource',data_tree);
+                var TreeStrategy = require('esui/TreeStrategy');
+                var strategy = new TreeStrategy();
+                strategy.attachTo(tree);
+                strategy.attachTo(tree2);
+                console.log(tree2);
+                /*Tree End*/
+
+                /*Wizard Start*/
+                var Wizard = require('esui/Wizard');
+                var prev = ui.get('prev');
+                var next = ui.get('next');
+                var step = [
+                    {text:'1',panel:'a'},
+                    {text:'2',panel:'b'},
+                    {text:'3',panel:'c'}
+                ];
+                var wiz = new Wizard({steps:step,activeIndex:0,skin:'default',finishText:'终点'});
+                console.log(wiz);
+                wiz.appendTo(document.getElementById('wiz'));
+                prev.onclick = function(){
+                    wiz.stepPrevious();
+                };
+                next.onclick = function () {
+                    wiz.stepNext();
+                };
+                /*Wizard End*/
+
+            });
+    require([
+        'esui',
+        'esui/Toast',
+        'esui/TextBox'
+    ],function(ui,Toast){
+
+        var normal = document.getElementById('normal');
+        var alert = document.getElementById('alert');
+        var info = document.getElementById('info');
+        var error = document.getElementById('error');
+        var success = document.getElementById('success');
+        var content = 'Hello Toast !';
+        normal.onclick = function () {
+            Toast.show(content).show();
+        };
+        info.onclick = function(){
+            Toast.info(content).show();
+        };
+        alert.onclick = function () {
+            Toast.alert(content).show();
+        };
+        error.onclick = function () {
+            Toast.error(content).show();
+        };
+        success.onclick = function () {
+            Toast.success(content).show();
+        };
+
+
+    });
 </script>
 </html>
