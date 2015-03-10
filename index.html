@@ -82,8 +82,24 @@
             <div class="item-title">Form</div>
             <div class="content">
                 <form data-ui-type="Form" data-ui-id="form" data-ui-auto-validate="true" data-ui-submit-button="sub-btn">
-                    <label data-ui="type:Label;text:输入数字:;title:数字"></label>
-                    <input data-ui-type="TextBox" data-ui-id="name" data-ui-child-name="name" data-ui-name="name" data-ui-mode="text"/>
+                    <label data-ui="type:Label;text:输入邮箱:;title:邮箱"></label>
+                    <input data-ui-type="TextBox" data-ui-id="email"
+                           data-ui-name="emailr" data-ui-mode="text"
+                           data-ui-title="email"
+                           data-ui-required="required"
+                           data-ui-pattern="^([\w\.\-]+)@([\w\-]+)(\.([a-zA-Z]{2,4})){1,2}$"
+                           data-ui-patternErrorMessage="邮箱"/>
+                    <label data-ui="type:Label;text:输入数字ID:;title:数字"></label>
+                    <input data-ui-type="TextBox" data-ui-id="number"
+                           data-ui-child-name="number"
+                           data-ui-name="number" data-ui-mode="text"
+                           data-ui-title="数字"
+                           data-ui-required="required"
+                           data-ui-pattern="^[0-9]\d*(\.\d+)?$"
+                           data-ui-patternErrorMessage="数字"/>
+                    <label data-ui="type:Label;text:输入个性签名:;title:签名" ></label>
+                    <input data-ui-type="TextBox" data-ui-id="name" data-ui-child-name="name" data-ui-name="name" data-ui-mode="text" data-ui-required="required"/>
+
                     <div class="subbtn" data-ui-type="Button" data-ui-id="sub-btn">提交</div>
                 </form>
             </div>
@@ -301,15 +317,17 @@
                 var name = form.getChild('name');
                 console.log(name);
                 var maxLength = 30;
-                var Validity = require('esui/Validity');
-                var validity = new Validity();
-                console.log(validity);
                 name.on('input', function () {
                     var value = this.getValue();
+                    var Validity = require('esui/validator/Validity');
+                    var validity = new Validity();
                     var leftLength = maxLength-value.length;
                     if(leftLength>0){
                         validity.setCustomValidState('notice');
                         validity.setCustomMessage('you can input '+leftLength+'word');
+                    }else {
+                        validity.setCustomValidState('warning');
+                        validity.setCustomMessage('还可以输入' + leftLength + '个字符');
                     }
                     this.showValidity(validity);
                 });
