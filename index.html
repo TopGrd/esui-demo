@@ -10,9 +10,33 @@
     <div class="header">
         <h1 class="title">ESUI-DEMO</h1>
     </div>
+    <div data-ui-type="Sidebar" data-ui-id="sideBar" data-ui="mode:autohide">
+        <div>导航</div>
+        <div>
+            <a href="#button" class="block">Button</a>
+            <a href="#boxgroup" class="block">BoxGroup</a>
+            <a href="#calendar" class="block">Calendar</a>
+            <a href="#commandmenu" class="block">CommandMenu</a>
+            <a href="#myC" class="block">Crumb</a>
+            <a href="#form" class="block">From</a>
+            <a href="#searchbox" class="block">SearchBox</a>
+            <a href="#panel" class="block">Panel</a>
+            <a href="#link" class="block">Link</a>
+            <a href="#select" class="block">Select</a>
+            <a href="#tab" class="block">Tab</a>
+            <a href="#textline" class="block">TextLine</a>
+            <a href="#tip" class="block">Tip</a>
+            <a href="#toast" class="block">Toast</a>
+            <a href="#tree" class="block">Tree</a>
+            <a href="#wizard" class="block">Wizard</a>
+            <a href="#region" class="block">Region</a>
+            <a href="#schedule" class="block">Schedule</a>
+
+        </div>
+    </div>
     <div class="container">
-        <div class="panel">
-            <div class="item-title">按钮</div>
+        <div class="panel" id="button">
+            <div class="item-title">Button</div>
             <div class="content">
                 <button data-ui="type:Button;id:normalBtn;">普通按钮</button>
                 <button data-ui="type:Button;id:norbigBtn;width:200;height:50">大按钮</button>
@@ -21,7 +45,7 @@
                 <button data-ui="type:Button;id:hideBtn;">点我隐藏</button>
             </div>
         </div>
-        <div class="panel">
+        <div class="panel" id="boxgroup">
             <div class="item-title">BoxGroup</div>
             <div class="content">
                 <div data-ui="type:BoxGroup;boxType:radio;id:Radio;orientation:horizontal;">
@@ -51,13 +75,13 @@
                 <p id="selectValue">已选值：</p>
             </div>
         </div>
-        <div class="panel">
+        <div class="panel" id="calendar">
             <div class="item-title">Calendar</div>
             <div class="content">
                 <div data-ui="type:Calendar;dateFormat:YYYY-MM-DD"></div>
             </div>
         </div>
-        <div class="panel">
+        <div class="panel" id="commandmenu">
             <div class="item-title">CommandMenu</div>
             <div class="content">
                 <div data-ui="type:CommandMenu;displayText:命令选择;"></div>
@@ -78,13 +102,13 @@
                 </div>
             </div>
         </div>
-        <div class="panel">
+        <div class="panel" id="form">
             <div class="item-title">Form</div>
             <div class="content">
                 <form data-ui-type="Form" data-ui-id="form" data-ui-auto-validate="true" data-ui-submit-button="sub-btn">
                     <label data-ui="type:Label;text:输入邮箱:;title:邮箱"></label>
                     <input data-ui-type="TextBox" data-ui-id="email"
-                           data-ui-name="emailr" data-ui-mode="text"
+                           data-ui-name="email" data-ui-mode="text"
                            data-ui-title="email"
                            data-ui-required="required"
                            data-ui-pattern="^([\w\.\-]+)@([\w\-]+)(\.([a-zA-Z]{2,4})){1,2}$"
@@ -104,13 +128,13 @@
                 </form>
             </div>
         </div>
-        <div class="panel">
+        <div class="panel" id="searchbox">
             <div class="item-title">SearchBox</div>
             <div class="content">
                 <div data-ui-type="SearchBox" data-ui-placeholder="搜索"></div>
             </div>
         </div>
-        <div class="panel">
+        <div class="panel" id="panel">
             <div class="item-title">Panel</div>
             <div class="content">
                 <div data-ui-type="Panel" data-ui-id="panel" class="exp-panel">
@@ -120,59 +144,54 @@
                 <button data-ui-id="setContent" data-ui-type="Button">设置内容</button>
             </div>
         </div>
-        <div class="panel">
+        <div class="panel" id="link">
             <div class="item-title">Link</div>
             <div class="content">
                 <a href="https://www.baidu.com" data-ui-type="Link" data-ui-id="linkforbaidu" data-ui-target="_blank">Baidu</a>
             </div>
         </div>
-        <div class="panel">
+        <div class="panel" id="pager">
             <div class="item-title">Pager</div>
             <div class="content">
                 <div data-ui-type="Pager" data-ui="layout:alignLeft;id:pager;" data-ui-page="5" data-ui-count="200"></div>
             </div>
         </div>
-        <div class="panel">
+        <div class="panel" id="select">
             <div class="item-title">Select</div>
             <div class="content">
                 <div data-ui-id="select" data-ui-type="Select" data-ui-width="200"></div>
             </div>
          </div>
-        <div class="panel">
+        <div class="panel" id="tab">
             <div class="item-title">Tab</div>
             <div class="content">
                 <div data-ui-id="tab" data-ui-type="Tab" data-ui-orientation="horizontal">
-                    <!--<ul data-role="navigator">
-                        <li data-for="a">Tab1</li>
-                        <li data-for="b">Tab2</li>
-                        <li data-for="c">Tab3</li>
-                    </ul>-->
                     <div id="tabPanel1" data-ui-type="Panel" class="exp-panel">content for Tab1</div>
                     <div id="tabPanel2" data-ui-type="Panel" class="exp-panel">content for Tab2</div>
                     <div id="tabPanel3" data-ui-type="Panel" class="exp-panel">content for Tab3</div>
                 </div>
             </div>
         </div>
-        <div class="panel">
+        <div class="panel" id="textline">
             <div class="item-title">TextLine</div>
             <div class="content">
                 <div data-ui-id="textLine" data-ui-type="TextLine"></div>
             </div>
         </div>
-        <div class="panel">
+        <div class="panel" id="tip">
             <div class="item-title">Tip</div>
             <div class="content">
                 <span>提示:</span>
                 <div data-ui-id="tip" data-ui-type="Tip" title="小提示">haha</div>
                 <span>点击:</span>
-                <div data-ui-type="Tip" data-ui-id="tipBtn" id="tipLabel" title="FUck" data-ui="showMode:click">小提示</div>
+                <div data-ui-type="Tip" data-ui-id="tipBtn" id="tipLabel" title="o-O" data-ui="showMode:click">小提示</div>
                 <br>
                 <br>
                 <label id="labelTip" data-ui-id="labelTip" data-ui-type="Label">我是提示</label>
 
             </div>
         </div>
-        <div class="panel">
+        <div class="panel" id="toast">
             <div class="item-title">Toast</div>
             <div class="content">
                 <button id="normal">normal</button>
@@ -182,14 +201,14 @@
                 <button id="success">success</button>
             </div>
         </div>
-        <div class="panel">
+        <div class="panel" id="tree">
             <div class="item-title">Tree</div>
             <div class="content" id="tree3">
                 <div data-ui-type="Tree" data-ui-id="tree"></div>
                 <div data-ui-type="Tree" data-ui-id="tree2" data-ui="skin:folder"></div>
             </div>
         </div>
-        <div class="panel">
+        <div class="panel" id="wizard">
             <div class="item-title">Wizard</div>
             <div class="content" id="wiz">
                 <button data-ui-id="prev" data-ui-type="Button">上一步</button>
@@ -200,8 +219,19 @@
 
             </div>
         </div>
+        <div class="panel">
+            <div class="item-title" id="region">Region</div>
+            <div class="content">
+                <div data-ui-type="Region" data-ui-id="region"></div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="item-title" id="schedule">Schedule</div>
+            <div class="content">
+                <div data-ui-type="Schedule" data-ui-id="schedule"></div>
+            </div>
+        </div>
     </div>
-
 </body>
 <script src="dep/esl/1.2.0/src/esl.js"></script>
 <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
@@ -242,6 +272,7 @@
                 'esui/Crumb',
                 'esui/Form',
                 'esui/Label',
+                'esui/Dialog',
                 'esui/Panel',
                 'esui/Link',
                 'esui/TextLine',
@@ -252,6 +283,9 @@
                 'esui/Tree',
                 'esui/TreeStrategy',
                 'esui/Select',
+                'esui/Sidebar',
+                'esui/Schedule',
+                'esui/Region',
                 'esui/InputControl',
                 'esui/Validity',
                 'esui/validator/Validity',
@@ -269,10 +303,10 @@
              ],
             function (ui,lib) {
                 var controls = ui.init();
-                var defaultBtn = controls[2];
-                var disabledBtn = controls[3];
-                var hideBtn = controls[4];
-                var cmdMenu = controls[8];
+                var defaultBtn = controls[3];
+                var disabledBtn = controls[4];
+                var hideBtn = controls[5];
+                var cmdMenu = controls[9];
 
                 /*Button Start*/
                 defaultBtn.onclick = function () {
@@ -312,6 +346,7 @@
 
                 function submit(e) {
                     var data = form.getData();
+                    console.log(data);
                 }
                 form.on('submit',submit);
                 var name = form.getChild('name');
@@ -324,7 +359,7 @@
                     var leftLength = maxLength-value.length;
                     if(leftLength>0){
                         validity.setCustomValidState('notice');
-                        validity.setCustomMessage('you can input '+leftLength+'word');
+                        validity.setCustomMessage('you can input '+leftLength+'words');
                     }else {
                         validity.setCustomValidState('warning');
                         validity.setCustomMessage('还可以输入' + leftLength + '个字符');
