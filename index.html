@@ -231,6 +231,17 @@
                 <div data-ui-type="Schedule" data-ui-id="schedule"></div>
             </div>
         </div>
+        <div class="panel">
+            <div class="item-title" id="schedule">RC</div>
+            <div class="content">
+                <div data-ui-type="RangeCalendar" data-ui-name="test"
+                    data-ui-id="test"
+                    data-ui-value=""
+                    data-ui-endless-check="true"
+                    data-ui-range="2011-03-02,2019-04-02",
+                    data-ui-showed-short-cut="昨天,最近7天,上周"></div>
+            </div>
+        </div>
     </div>
 </body>
 <script src="dep/esl/1.2.0/src/esl.js"></script>
@@ -242,21 +253,31 @@
         'packages': [
             {
                 'name': 'mini-event',
-                'location': 'dep/mini-event/1.0.2/src'
+                'location': '../dep/mini-event/1.0.2/src',
+                'main': 'main'
             },
             {
                 'name': 'moment',
-                'location': 'dep/moment/2.7.0/src',
+                'location': '../dep/moment/2.7.0/src',
                 'main': 'moment'
             },
             {
                 'name': 'underscore',
-                'location': 'dep/underscore/1.5.2/src',
+                'location': '../dep/underscore/1.5.2/src',
                 'main': 'underscore'
             },
             {
                 'name': 'esui',
-                'location':'dep/esui/3.1.0-beta.6/src',
+                'location': '../dep/esui/3.1.0/src',
+                'main': 'main'
+            },
+            {
+                'name': 'esl',
+                'location': '../dep/esl/1.2.0/src'
+            },
+            {
+                'name': 'etpl',
+                'location': '../dep/etpl/3.0.0/src',
                 'main': 'main'
             }
         ]
@@ -299,7 +320,9 @@
                 'esui/SearchBox',
                 'esui/Pager',
                 'esui/Wizard',
-                'esui/Frame'
+                'esui/Frame',
+                'esui/RangeCalendar',
+                'esui/RichCalendar'
              ],
             function (ui,lib) {
                 var controls = ui.init();
@@ -507,7 +530,14 @@
                     wiz.stepNext();
                 };
                 /*Wizard End*/
-
+                var m = require('moment');
+                var test2 = ui.get('test');
+                var okBtn = test2.getChild('okBtn');
+                test2.on('change', function () {
+                    var t = test2.getRawValue().begin;
+                    var t2 = m(t).format('YYYY-MM-DD')
+                    alert(t2);
+                });  
             });
     require([
         'esui',
